@@ -10,7 +10,7 @@ lyricsgenius
 motor
 pillow
 psutil
-py-tgcalls==0.9.8
+py-tgcalls
 pykeyboard
 pyrogram==2.0.106
 pyromod~=1.5
@@ -24,3 +24,4 @@ youtube-search
 youtube-search-python
 
 yt-dlp
+
