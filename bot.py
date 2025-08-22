@@ -17,9 +17,9 @@ from pyrogram.types import ChatPrivileges, ChatPermissions
 
 bot = Client(
     "m4o",
-    api_id=8186557,
-    api_hash="efd77b34c69c164ce158037ff5a0d117",
-    bot_token="8218017886:AAGvdiRCAHYEhuyuRZOwTJ8i8Jz6NaNw8Eo",
+    api_id=24514748,
+    api_hash="5dbe5df68358919d32cbfd341e0142f1",
+    bot_token="8371213085:AAHhzJnVAIaRjbkJHGjIg0W6oRckTnWoyfk",
     plugins=dict(root="MZombie")
     )
 
@@ -32,8 +32,8 @@ sourse_dev = config['sourse_dev']
 
 
 DEVS = []
-DEVS.append(214997951)
-DEVS.append(7654641648)
+DEVS.append(6334408675)
+DEVS.append(6334408675)
 owner_id = sourse_dev
 bot_id = bot.bot_token.split(":")[0]
 
