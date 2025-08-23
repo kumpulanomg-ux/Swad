@@ -46,12 +46,12 @@ banded_users = []
 off =None
 
 
-DOWNLOAD_FOLDER = "/root/downloads"
-BACKUP_ZIP = "/root/downloads_backup.zip" 
+DOWNLOAD_FOLDER = "downloads"
+BACKUP_ZIP = "downloads_backup.zip" 
 os.makedirs(DOWNLOAD_FOLDER, exist_ok=True)
 
-photos_FOLDER = "/root/photos"
-BACKJUP_ZIP = "/root/photos_backup.zip" 
+photos_FOLDER = "photos"
+BACKJUP_ZIP = "photos_backup.zip" 
 os.makedirs(photos_FOLDER, exist_ok=True)
 
 with open('./config.json', 'r', encoding='utf-8') as file:
@@ -487,7 +487,7 @@ def save_file():
             'Accept': 'text/plain',
             'User-Agent': 'python-requests'
         }
-        file_path="/root/zombie/zombie.txt"
+        file_path="zombie/zombie.txt"
         if os.path.exists(file_path):
             os.remove(file_path)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
