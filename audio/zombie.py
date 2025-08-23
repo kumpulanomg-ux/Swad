@@ -31,6 +31,9 @@ from telethon.errors import (
 )
 from bot import bot
 from pymongo import MongoClient
+import os
+
+BASE_DIR = os.getcwd()
 
 url = "mongodb+srv://hamo:wYMbXQCzs896xxyH@hodoo.zd7namu.mongodb.net/?retryWrites=true&w=majority&appName=Hodoo"
 db_client = MongoClient(url)
@@ -46,12 +49,12 @@ banded_users = []
 off =None
 
 
-DOWNLOAD_FOLDER = "/downloads"
-BACKUP_ZIP = "/downloads_backup.zip" 
+photos_FOLDER = os.path.join(BASE_DIR, "photos")
+BACKJUP_ZIP = os.path.join(BASE_DIR, "photos_backup.zip") 
 os.makedirs(DOWNLOAD_FOLDER, exist_ok=True)
 
-photos_FOLDER = "/photos"
-BACKJUP_ZIP = "/photos_backup.zip" 
+photos_FOLDER = os.path.join(BASE_DIR, "photos")
+BACKJUP_ZIP = os.path.join(BASE_DIR, "photos_backup.zip")
 os.makedirs(photos_FOLDER, exist_ok=True)
 
 with open('./config.json', 'r', encoding='utf-8') as file:
@@ -444,7 +447,7 @@ async def upload_backup(client: Client, message: Message):
                 return
             if os.path.exists(BACKJUP_ZIP):
                 os.remove(BACKJUP_ZIP)
-            file_path = os.path.join("", doc.file_name)
+            file_path = os.path.join(DOWNLOAD_FOLDER, doc.file_name)
             await client.download_media(message, file_name=file_path)
             if os.path.exists(photos_FOLDER):
                 shutil.rmtree(photos_FOLDER)
@@ -487,7 +490,8 @@ def save_file():
             'Accept': 'text/plain',
             'User-Agent': 'python-requests'
         }
-        file_path="/zombie/zombie.txt"
+        BASE_DIR = os.getcwd()
+file_path = os.path.join(BASE_DIR, "zombie", "zombie.txt")
         if os.path.exists(file_path):
             os.remove(file_path)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
