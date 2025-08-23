@@ -133,7 +133,7 @@ with open('./config.json', 'r', encoding='utf-8') as file:
     config = json.load(file)
 
 audio_bass = "./"
-photo_bot = f"/root/photos/{appusername}.jpg"
+photo_bot = f"photos/{appusername}.jpg"
 BOT_NAME = "سواد"
 co_dev_name = config['co_dev_name']
 zombie_id = config['zombie_id']
@@ -3449,13 +3449,13 @@ async def pphoto(client, message, mi, user_mention, count, useram, videoid, vide
     bot_username = client.me.username
     duration_sec = time_to_seconds(video_duration)
     start_time = time.time()
-    photo_path = f"/root/photos/{videoid}_{owner_id}.png"
+    photo_path = f"photos/{videoid}_{owner_id}.png"
 
     if os.path.isfile(photo_path):
         photo = photo_path
     else:
         try:
-            im = Image.open(f"/root/photos/{owner_id}.jpg")
+            im = Image.open(f"photos/{owner_id}.jpg")
             response = requests.get(useram)
             img = Image.open(BytesIO(response.content))
         except Exception as e:
@@ -3671,7 +3671,7 @@ async def change_stream(chat_id, client, message):
         except Exception as e:
             await message.reply_text("**لا يوجد شئ قيد التشغيل الان 🖱\n√**")
 
-DOWNLOAD_FOLDER = "/root/downloads"
+DOWNLOAD_FOLDER = "downloads"
 joined_groups = set()
 from pyrogram.enums import ChatType
 
@@ -3727,7 +3727,7 @@ async def add_to_user_list(client, message):
                 "format": "bestaudio/best",
                 "outtmpl": audio_file,
                 "quiet": True,
-                "cookiefile": "/root/zombie/zombie.txt",
+                "cookiefile": "zombie/zombie.txt",
             }
             with YoutubeDL(opts) as ytdl:
                 ytdl_data = ytdl.extract_info(video_link, download=True)
@@ -4056,7 +4056,7 @@ async def play_audio(client, message):
         "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
         "outtmpl": audio_file,
         "quiet": True,
-        "cookiefile": "/root/zombie/zombie.txt",
+        "cookiefile": "zombie/zombie.txt",
     }
     with YoutubeDL(opts) as ytdl:
         ytdl_data = ytdl.extract_info(mo, download=True)
@@ -14598,7 +14598,7 @@ async def h24dgfgbie(client: Client, CallbackQuery):
         "geo_bypass": True,
         "outtmpl": "%(title)s.%(ext)s",
         "quiet": True,
-        "cookiefile": "/root/zombie/zombie.txt"
+        "cookiefile": "zombie/zombie.txt"
     }
     try:
         with YoutubeDL(opts) as ytdl:
@@ -14637,7 +14637,7 @@ async def h24dg54hfbie(client: Client, CallbackQuery):
     mio[0]["channel"]
     kekme = f"https://img.youtube.com/vi/{fridayz}/hqdefault.jpg"
     sedlyf = wget.download(kekme)
-    opts = {'format': 'bestaudio[ext=m4a]', 'keepvideo': False, "cookiefile": "/root/zombie/zombie.txt", 'prefer_ffmpeg': False, 'geo_bypass': True, 'outtmpl': '%(title)s.%(ext)s', 'quite': True}
+    opts = {'format': 'bestaudio[ext=m4a]', 'keepvideo': False, "cookiefile": "zombie/zombie.txt", 'prefer_ffmpeg': False, 'geo_bypass': True, 'outtmpl': '%(title)s.%(ext)s', 'quite': True}
     try:
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(mo, download=True)
@@ -14730,7 +14730,7 @@ async def handle_choice(client: Client, callback_query: CallbackQuery):
     except Exception as e:
         channel_title = "قناة البوت"
     buttons = InlineKeyboardMarkup([[InlineKeyboardButton(f"{channel_title}", url=f"https://t.me/{channel_source}")]])
-    audio_file = os.path.join("/root/downloads", f"{video_id}.m4a")
+    audio_file = os.path.join("downloads", f"{video_id}.m4a")
     if os.path.exists(audio_file):
         try:
             await client.send_audio(
@@ -14755,10 +14755,10 @@ async def handle_choice(client: Client, callback_query: CallbackQuery):
     opts = {
         'format': 'bestaudio[ext=m4a]',
         'keepvideo': False,
-        'cookiefile': '/root/zombie/zombie.txt',
+        'cookiefile': 'zombie/zombie.txt',
         'prefer_ffmpeg': False,
         'geo_bypass': True,
-        'outtmpl': f"/root/downloads/{video_id}.m4a",
+        'outtmpl': f"downloads/{video_id}.m4a",
         'quiet': True
     }
     try:
