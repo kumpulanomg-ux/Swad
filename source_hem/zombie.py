@@ -130,7 +130,7 @@ with open('./config.json', 'r', encoding='utf-8') as file:
     config = json.load(file)
 
 audio_bass = "./"
-photo_bot = f"photos/{appusername}.jpg"
+photo_bot = f"/photos/{appusername}.jpg"
 BOT_NAME = config['BOT_NAME']
 co_dev_name = config['co_dev_name']
 zombie_id = config['zombie_id']
@@ -11313,7 +11313,7 @@ async def h24dgfgbie(client: Client, CallbackQuery):
         "geo_bypass": True,
         "outtmpl": "%(title)s.%(ext)s",
         "quiet": True,
-        "cookiefile": "zombie/zombie.txt"
+        "cookiefile": "/zombie/zombie.txt"
     }
     try:
         with YoutubeDL(opts) as ytdl:
@@ -11352,7 +11352,7 @@ async def h24dg54hfbie(client: Client, CallbackQuery):
     mio[0]["channel"]
     kekme = f"https://img.youtube.com/vi/{fridayz}/hqdefault.jpg"
     sedlyf = wget.download(kekme)
-    opts = {'format': 'bestaudio[ext=m4a]', 'keepvideo': False, "cookiefile": "zombie/zombie.txt", 'prefer_ffmpeg': False, 'geo_bypass': True, 'outtmpl': '%(title)s.%(ext)s', 'quite': True}
+    opts = {'format': 'bestaudio[ext=m4a]', 'keepvideo': False, "cookiefile": "/zombie/zombie.txt", 'prefer_ffmpeg': False, 'geo_bypass': True, 'outtmpl': '%(title)s.%(ext)s', 'quite': True}
     try:
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(mo, download=True)
